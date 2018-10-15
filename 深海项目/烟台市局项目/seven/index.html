@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<title>海洋立体在线监测系统</title>
+		<meta name="keywords" content="入海污染源" />
+
+		<link rel="stylesheet" href="css/ol.css" type="text/css">
+		<script src="js/ol.js" type="text/javascript"></script>
+		<!-- basic styles -->
+		<style>
+			.right_div1 {
+				width: 347px;
+				height: 110px;
+				background: #368ff3;
+				position: absolute;
+				z-index: 888;
+				margin-top: 5px;
+			}
+			
+			.right_indiv1 {
+				font-size: 12px;
+				color: #fff;
+				padding-top: 12px;
+				padding-left: 30px;
+				height: 30px;
+				width: 50%;
+				float: left;
+			}
+			
+			.right_indiv3 {
+				position: absolute;
+				top: 40px;
+				padding-left: 105px;
+				border-right: 1px solid #dddddd;
+				width: 20px;
+				height: 60px;
+				left: 40px;
+			}
+			
+			.right_div2 {
+				width: 347px;
+				height: 95px;
+				background: #50ae1a;
+				position: absolute;
+				z-index: 999;
+				margin-top: 120px;
+			}
+			
+			.right_div3 {
+				width: 240px;
+				height: 80px;
+				background: #c79500;
+				position: absolute;
+				z-index: 999;
+				top: 270px;
+				right: 10px;
+			}
+			
+			.right_div4 {
+				width: 240px;
+				height: 160px;
+				background: #fff;
+				position: absolute;
+				z-index: 999;
+				top: 370px;
+				right: 10px;
+			}
+			
+			.location1 {
+				width: 125px;
+				height: 20px;
+				position: absolute;
+				bottom: 30px;
+				left: 20px;
+				color: #FFF;
+				z-index: 901;
+			}
+			
+			.location2 {
+				width: 125px;
+				height: 20px;
+				position: absolute;
+				bottom: 30px;
+				left: 300px;
+				color: #FFF;
+				z-index: 901;
+			}
+			
+			#up_zzjs {
+				border: 1px solid #ccc;
+				width: 100%;
+				height: 400px;
+				line-height: 20px;
+				overflow: hidden;
+				background-color: white
+			}
+			
+			#up_zzjs #up_li {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				margin-left: 6px;
+			}
+			
+			#up_zzjs #up_li a {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		</style>
+
+	</head>
+
+	<body ng-app="myApp" ng-controller="customersCtrl">
+
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+			<link href="css/select.css" rel="stylesheet" type="text/css" />
+
+			<link href="css/bootstrap.min.css" rel="stylesheet" />
+			<link href="css/font-awesome.css" rel="stylesheet" />
+			<link href="css/fullcalendar.css" rel="stylesheet" />
+			<link rel="stylesheet" href="css/maruti-style.css" />
+			<link rel="stylesheet" href="css/maruti-media.css" class="skin-color" />
+			<link href="css/openmap.css" rel="stylesheet">
+			<link href="css/gss_tianjia.css" rel="stylesheet">
+			<script src="js/jquery-1.7.1.js"></script>
+			<!--ztree的js样式-->
+			<!--[if lt IE 9]>
+					<script src="js/html5shiv.js"></script>
+				    <script src="js/respond.min.js"></script>
+				<![endif]-->
+
+			<!-- angularjs -->
+			<script src="js/angular.js"></script>
+			<script src="js/angular-animate.js"></script>
+			<script src="js/angular-touch.js"></script>
+
+			<!-- ngdialog -->
+			<script src="js/ngDialog.js"></script>
+			<link href="css/ngDialog.css" rel="stylesheet" type="text/css" />
+			<link href="css/ngDialog-theme-default.css" rel="stylesheet" type="text/css" />
+
+			<script src="js/ui-bootstrap-tpls.js"></script>
+
+			<script src="js/ui-grid.js"></script>
+			<script src="js/csv.js"></script>
+			<script src="js/pdfmake.js"></script>
+			<script src="js/vfs_fonts.js"></script>
+			<link href="css/ui-grid.css" rel="stylesheet">
+
+			<script src="css/ng-grid-csv-export.js"></script>
+
+			<script src="/oceanxpert/yantai/resources/assets/js/jquery-2.0.3.js"></script>
+
+			<title>海洋立体环境在线监测系统</title>
+			<script type="text/javascript">
+				var hasMessage = "1";
+				if(hasMessage == 0) {
+					var message = "null";
+					bootbox.dialog({
+						message: message,
+						buttons: {
+							"success": {
+								"label": "OK",
+								"className": "btn-sm btn-primary"
+							}
+						}
+					});
+					try {
+						//alert("parent.afterSubmit();");
+						parent.afterSubmit(message);
+					} catch(e) {
+						//alert("parent.afterSubmit();EEE="+e);
+					}
+				}
+			</script>
+
+		</head>
+
+		<body>
+			<div id="header">
+				<h1>海洋立体在线监测系统 </h1>
+			</div>
+			<!--close-Header-part-->
+
+			<!--top-Header-messaages-->
+			<div class="btn-group rightzero">
+				<a class="top_message tip-left" title="Manage Files"><i class="icon-file"></i></a>
+				<a class="top_message tip-bottom" title="Manage Users"><i class="icon-user"></i></a>
+				<a class="top_message tip-bottom" title="Manage Comments"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="top_message tip-bottom" title="Manage Orders"><i class="icon-shopping-cart"></i></a>
+			</div>
+			<!--close-top-Header-messaages-->
+
+			<!--top-Header-menu-->
+			<div id="user-nav" class="navbar navbar-inverse">
+				<ul class="nav">
+					<li class="">
+						<a title="" href="/oceanxpert/info_warnvalue.do?currmenuId=108020">
+							<!--style新增，i修改-->
+							<i style=" color: #ff6e16" class="fa fa-bell-o"></i>
+							<span class="text">预警</span> <span class="label label-important">571</span>
+						</a>
+					</li>
+					<li class=" dropdown" id="menu-messages">
+						<a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle">
+							<!--style新增，i修改-->
+							<i style=" color: #0a376a" class="fa fa-user-circle-o"></i>
+							<span class="text">欢迎,系统管理员</span>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu menu-messages_dropdown">
+							<li>
+								<a class="sAdd" title="" href="/oceanxpert/userSettingInfo.do">个人设置</a>
+							</li>
+
+							<li>
+								<a class="sInbox" title="" href="/oceanxpert/passSettingInfo.do">密码修改</a>
+							</li>
+
+							<li>
+								<a class="sTrash" title="" href="/oceanxpert/logout.do">退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<!--close-top-Header-menu-->
+
+			<div id="sidebar">
+				<ul>
+
+					<li>
+
+						<a href="allfirstPage.do?currmenuId=600001">
+							<!--i修改-->
+							<i class="fa fa-home"></i> <span>首页</span></a>
+
+					</li>
+
+					<li>
+
+						<a href="#"><i class="fa fa-bar-chart"></i><span>数据管理</span></a>
+						<ul>
+
+							<li>
+								<a href="dataqueryNow_init.do?currmenuId=106005">实效数据</a>
+							</li>
+
+							<li>
+								<a href="dataquery_init.do?currmenuId=106010">历史数据查询</a>
+							</li>
+
+						</ul>
+
+					</li>
+
+					<li>
+
+						<a href="#"><i class="fa fa-pie-chart"></i><span>数值分析</span></a>
+						<ul>
+
+							<li>
+								<a href="info_graphquery.do?currmenuId=107030">趋势对比</a>
+							</li>
+
+							<li>
+								<a href="info_statisreportavg.do?currmenuId=107050">综合报表</a>
+							</li>
+
+						</ul>
+
+					</li>
+
+					<li>
+
+						<a href="#"><i class="fa fa-gear"></i><span>设备管理</span></a>
+						<ul>
+
+							<li>
+								<a href="info_deviceWatch.do?currmenuId=107510">设备状态</a>
+							</li>
+
+							<li>
+								<a href="info_deviceTrail.do?currmenuId=107520">轨迹设置</a>
+							</li>
+
+						</ul>
+
+					</li>
+
+					<li>
+
+						<a href="#"><i class="fa fa-bell-o"></i><span>预警告警</span></a>
+						<ul>
+
+							<li>
+								<a href="info_warnvalue.do?currmenuId=108020">预警告警信息</a>
+							</li>
+
+						</ul>
+
+					</li>
+
+					<li>
+
+						<a href="#"><i class="fa fa-asterisk"></i><span>维护查询</span></a>
+						<ul>
+
+							<li>
+								<a href="info_mainEdit.do?currmenuId=102040">站点维护上报</a>
+							</li>
+
+							<li>
+								<a href="info_mainShow.do?currmenuId=102050">站点维护查询</a>
+							</li>
+
+						</ul>
+
+					</li>
+
+				</ul>
+			</div>
+
+			<!--头部结束-->
+
+			<script src="js/excanvas.min.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.ui.custom.js"></script>
+			<script src="js/bootstrap.min.js" </script>
+				<script src="js/jquery.flot.min.js">
+			</script>
+			<script src="js/jquery.flot.resize.min.js"></script>
+			<script src="js/jquery.flot.pie.min.js"></script>
+			<script src="js/fullcalendar.min.js"></script>
+			<script src="js/maruti.js"></script>
+			<script src="js/maruti.dashboard.js"></script>
+			<script src="js/maruti.chat.js"></script>
+			<script type="text/javascript">
+				// This function is called from the pop-up menus to transfer to
+				// a different page. Ignore if the value returned is a null string:
+				function goPage(newURL) {
+
+					// if url is empty, skip the menu dividers and reset the menu selection to default
+					if(newURL != "") {
+
+						// if url is "-", it is this page -- reset the menu:
+						if(newURL == "-") {
+							resetMenu();
+						}
+						// else, send page to designated URL            
+						else {
+							document.location.href = newURL;
+						}
+					}
+				}
+
+				// resets the menu selection upon entry to this page:
+				function resetMenu() {
+					document.gomenu.selector.selectedIndex = 2;
+				}
+			</script>
+		</body>
+
+</html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="js/textAngular-rangy.min.js"></script>
+	<script src="js/textAngular-sanitize.js"></script>
+	<script src="js/textAngularSetup.js"></script>
+	<script src="js/textAngular.js"></script>
+	<link rel="stylesheet" href="css/textAngular.css" />
+	<link rel="stylesheet" href="css/textAngular1.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+</head>
+
+</html>
+
+<div id="content">
+	<div id="content-header">
+		<div id="breadcrumb">
+			<a href="allfirstPage.do" title="系统首页" class="tip-bottom"><i class="icon-home"></i> 综合面板</a>
+		</div>
+	</div>
+	<div id="map" class="map" style="background: url();">
+		<div id="layerbox" class="layerbox usel" style="position:absolute;z-index:888;right: 0px; top: 10px; left: 40px">
+			<div class="ui3-control-shadow" ng-click="showlayersControl();">
+				<img class="ui3-control-icon" src="images/location 2.png" />
+				<div class="ui3-control-span">&nbsp;&nbsp;站点列表</div>
+			</div>
+
+		</div>
+		<div id='databox' class="layerbox usel">
+			<!--右侧修改开始-->
+			<div class="hlx_sy_con_r">
+				<div class="hlx_sy_con_r_tit">
+					<p>AUV-1</p>
+				</div>
+				<div class="hlx_sy_con_r_con">
+					<div class="hlx_sy_con_r_con_1"> <div class="hlx_sy_con_r_con_1_img"><img src="images/gss_s1.png"></div>
+					<p>运行状态：正常</p>
+					</div>
+					<div class="hlx_sy_con_r_con_2">
+						<div class="hlx_sy_con_r_con_2_con">
+						<div class="hlx_sy_con_r_con_2_con_tit">ADCP</div>
+						<table class="table table-hover table-bordered table-responsive">
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+                       </table>
+                       </div>
+                       <div class="hlx_sy_con_r_con_2_con">
+						<div class="hlx_sy_con_r_con_2_con_tit">CTD</div>
+						<table class="table table-hover table-bordered table-responsive">
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+							<tr>
+								<td class="table_blue_zi">
+									水温
+								</td>
+								<td>
+									时间
+								</td>
+								<td>
+									***
+								</td>
+							</tr>
+                        </table>
+                        </div>
+					</div>
+				</div>
+			</div>
+			<!--右侧修改结束-->
+		</div>
+
+		<div id='layersControl' class="widget-box">
+			<div class="widget-title">
+				<h5>站点列表</h5>
+				<div class="buttons">
+					<a ng-click="showlayersControl();"><i class="icon-refresh"></i>关闭</a>
+				</div>
+			</div>
+			<div class="widget-contents">
+				<ul id="mtree" class="ztree"></ul>
+			</div>
+		</div>
+		<div id="location" class="location1"></div>
+	</div>
+	</body>
+	<link rel="stylesheet" href="css/metroStyle.css" type="text/css">
+	<script type="text/javascript" src="js/jquery.ztree.core-3.5.js"></script>
+	<script type="text/javascript" src="js/jquery.ztree.excheck-3.5.js"></script>
+	<script src="js/allhomeInfo.js"></script>
+
+	</html>

@@ -1,0 +1,304 @@
+/*toubu*/
+
+.right_div1 {
+	width: 347px;
+	height: 110px;
+	background: #368ff3;
+	position: absolute;
+	z-index: 888;
+	margin-top: 5px;
+}
+
+.right_indiv1 {
+	font-size: 12px;
+	color: #fff;
+	padding-top: 12px;
+	padding-left: 30px;
+	height: 30px;
+	width: 50%;
+	float: left;
+}
+
+.right_indiv3 {
+	position: absolute;
+	top: 40px;
+	padding-left: 105px;
+	border-right: 1px solid #dddddd;
+	width: 20px;
+	height: 60px;
+	left: 40px;
+}
+
+.right_div2 {
+	width: 347px;
+	height: 95px;
+	background: #50ae1a;
+	position: absolute;
+	z-index: 999;
+	margin-top: 120px;
+}
+
+.right_div3 {
+	width: 240px;
+	height: 80px;
+	background: #c79500;
+	position: absolute;
+	z-index: 999;
+	top: 270px;
+	right: 10px;
+}
+
+.right_div4 {
+	width: 240px;
+	height: 160px;
+	background: #fff;
+	position: absolute;
+	z-index: 999;
+	top: 370px;
+	right: 10px;
+}
+
+.location1 {
+	width: 125px;
+	height: 20px;
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	color: #FFF;
+	z-index: 901;
+}
+
+.location2 {
+	width: 125px;
+	height: 20px;
+	position: absolute;
+	bottom: 30px;
+	left: 300px;
+	color: #FFF;
+	z-index: 901;
+}
+
+#up_zzjs {
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 400px;
+	line-height: 20px;
+	overflow: hidden;
+	background-color: white
+}
+
+#up_zzjs #up_li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 6px;
+}
+
+#up_zzjs #up_li a {
+	font-size: 12px;
+	line-height: 16px;
+}
+
+
+/*首页右侧样式 文字 开始*/
+
+.hlx_sy_con_r {
+	width: 345px;
+	border-radius: 4px;
+	display: inline-block;
+	border: 1px solid #a2a5ac;
+}
+
+.hlx_sy_con_r_tit {
+	background: #3283de;
+	line-height: 40px;
+	color: #fff;
+}
+
+.hlx_sy_con_r_tit p {
+	padding-left: 10px;
+	font-size: 14px;
+	margin: 0;
+}
+
+.hlx_sy_con_r_con {
+	padding: 9px;
+}
+
+.hlx_sy_con_r_con_1 {
+	width: 100%;
+}
+
+.hlx_sy_con_r_con_1_img {
+	width: 100%;
+	height: 87px;
+	overflow: hidden;
+}
+
+.hlx_sy_con_r_con_1 p {
+	background: #2a2a2b;
+	color: #fff;
+	line-height: 22px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	padding-left: 10px;
+	margin: 0;
+}
+
+.hlx_sy_con_r_con_2 {
+	margin-top: 9px;
+	max-height: 400px;
+	overflow-y: auto;
+}
+
+.hlx_sy_con_r_con_2_con {
+	margin-bottom: 9px;
+}
+
+.hlx_sy_con_r_con_2_con_tit {
+	line-height: 28px;
+	font-size: 14px;
+	background: #f9f9f9;
+	border: 1px solid #cfcfcf;
+	border-bottom: none;
+	padding-left: 10px;
+}
+
+.table_blue_zi {
+	color: #3283de;
+}
+
+.hlx_sy_con_r_con_2 table {
+	margin-bottom: 0px;
+}
+
+
+/*首页右侧样式 图片 开始*/
+
+.hlx_sy_con_r_con_3 {
+	display: inline-block;
+	clear: both;
+	width: 100%;
+	height: auto;
+}
+
+.hlx_sy_con_r_con_3 ul {
+	margin: 0;
+}
+
+.hlx_sy_con_r_con_3 ul li {
+	display: block;
+	float: left;
+	width: 49%;
+	margin-right: 1%;
+	margin-bottom: 6px;
+}
+
+.hlx_sy_con_r_con_3 ul li button img {
+	padding: 0;
+}
+
+.hlx_sy_con_r_con_3 ul li>.btn {
+	padding: 0;
+	width: 100%;
+}
+
+.hlx_sy_con_r_con_3 ul li img {
+	width: 100%;
+}
+
+.modal-backdrop {
+	z-index: 700!important;
+}
+
+
+/*实时数据修改*/
+
+.hlx_ss_con .col-md-3 {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 6px;
+}
+
+.hlx_ss_con_1 {
+	width: 100%;
+	border-radius: 4px;
+	display: inline-block;
+	border: 1px solid #a2a5ac;
+	background: #fff;
+}
+
+.hlx_ss_con_1_tit {
+	background: #a2abb5;
+	line-height: 40px;
+	color: #fff;
+}
+
+.hlx_ss_con_1_tit p {
+	padding-left: 10px;
+	font-size: 14px;
+	margin: 0;
+}
+
+.hlx_ss_con_1_con {
+	padding: 9px;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.hlx_ss_con_1_con_2_con_tit {
+	line-height: 28px;
+	font-size: 14px;
+	background: #f9f9f9;
+	border: 1px solid #cfcfcf;
+	border-bottom: none;
+	padding-left: 10px;
+}
+
+.hlx_ss_con_1_con_2_con .table-bordered {
+	border-collapse: collapse!important;
+	border: 1px solid #ddd;
+	!important;
+}
+
+
+/*历史数据*/
+
+.hlx_lishi_con2 {
+	height: auto;
+	display: inline-block;
+	width: 100%;
+	clear: both;
+}
+
+.hlx_lishi_con2__c{
+	width: 100%;
+	clear: both;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	display: inline-block;
+}
+
+.hlx_lishi_con2_p {
+	font-size: 18px;
+	padding-left: 15px;
+	margin: 0;
+	line-height: 40px;
+	border-bottom: 1px solid #ddd;
+	background: #efefef;
+}
+
+.hlx_lishi_con2 ul li {
+	float: left;
+	width: 120px;
+	margin-left: 10px;
+	padding: 10px 0;
+}
+
+.hlx_lishi_con2 ul li img {
+	width: 100%;
+}
+
+.hlx_lishi_con2 ul li p {
+	text-align: center;
+}
